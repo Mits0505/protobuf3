@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+message Person{
+    int32 age = 1;
+    string first_name = 2;
+    string last_name = 3;
+    bytes small_picture = 4;
+    bool is_profile_verified = 5;
+    float height = 6;
+    repeated string phone_numbers = 7;
+    
+    // we define the type address within Person (full name is Person.Address)
+    message Address{
+        string house_number = 1;
+        string floor_number = 2;
+        string area = 33;
+        string city = 4;
+        string zip_code =5;
+        string country = 6;
+    }
+
+    repeated Address addresses = 8;
+
+}
+
